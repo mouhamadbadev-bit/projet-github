@@ -6,7 +6,7 @@ interface SearchHeaderProps {
 }
 
 export default function SearchHeader({ onSearch }: SearchHeaderProps) {
-  const [inputVal, setInputVal] = useState('');
+  const [inputVal, setInputVal] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();

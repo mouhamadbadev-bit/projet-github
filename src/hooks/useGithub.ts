@@ -17,7 +17,12 @@ export function useGithub(username: string) {
 
       try {
         // 1. Récupérer le profil
-        const userRes = await fetch(`https://api.github.com/users/${username}`);
+        const userRes = await fetch(`https://api.github.com/users/${username}`, {
+          headers: {
+          Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
+          },
+
+          });
         if (!userRes.ok) {
           throw new Error("Utilisateur introuvable sur GitHub.");
         }
@@ -25,7 +30,12 @@ export function useGithub(username: string) {
         setProfile(userData);
 
         // 2. Récupérer les dépôts
-        const reposRes = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
+        const reposRes =  await fetch(`https://api.github.com/users/${username}/repos?per_page=6`, {
+         headers: {
+          Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
+          },
+
+        });
         if (!reposRes.ok) {
           throw new Error("Impossible de récupérer les dépôts.");
         }

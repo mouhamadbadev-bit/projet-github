@@ -20,4 +20,5 @@ export interface GithubRepo {
     stargazers_count: number;
     language: string | null;
     forks_count: number;
+    
 }
