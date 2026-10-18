@@ -19,7 +19,7 @@ export function useGithub(username: string) {
         // 1. Récupérer le profil
         const userRes = await fetch(`https://api.github.com/users/${username}`, {
           headers: {
-          Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
+          Authorization: `Bearer ${tu dois importer token}`,
           },
 
           });
