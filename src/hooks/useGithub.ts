@@ -32,7 +32,7 @@ export function useGithub(username: string) {
         // 2. Récupérer les dépôts
         const reposRes =  await fetch(`https://api.github.com/users/${username}/repos?per_page=6`, {
          headers: {
-          Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
+          Authorization: `Bearer ${}`,
           },
 
         });
